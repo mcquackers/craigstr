@@ -1,0 +1,8 @@
+<% if current_user.admin? %>
+  <%= render "error_messages", target: @region %>
+  <%= form_for @region do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.submit %>
+  <% end %>
+<% end %>
