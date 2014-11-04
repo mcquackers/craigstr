@@ -1,4 +1,4 @@
-<%= if target.errors.any? %>
+<% if target.errors.any? %>
   <h2><%= pluralize target.errors.count, "error" %> prevented the form from saving</h2>
   <ul>
     <% target.errors.each do |error| %>
