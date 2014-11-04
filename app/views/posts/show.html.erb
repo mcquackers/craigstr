@@ -1,4 +1,3 @@
-<div>
 <%= button_to "Mark as Spam", {id: @post.id, post: {spam: true}}, {method: :patch} %>
 <h3><%= @post.user.email %> writes: </h3>
 
