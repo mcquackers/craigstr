@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 20141104191729) do
     t.boolean  "spam",       default: false, null: false
   end
 
+  add_index "posts", ["region_id"], name: "index_posts_on_region_id", using: :btree
+
   create_table "regions", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
