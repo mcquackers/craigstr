@@ -15,9 +15,9 @@ class RegionsController < ApplicationController
   end
 
   def show
-    region = Region.find(params[:id])
-    @categories = region.categories.all
-    @category = region.categories.new
+    @region = Region.find(params[:id])
+    @categories = @region.categories.all
+    @category = @region.categories.new
   end
 
   private

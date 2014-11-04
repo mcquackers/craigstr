@@ -10,6 +10,11 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def show
+    region = Category.find(params[:id]).region
+    @posts = region.posts.all
+  end
+
   private
 
   def category_params

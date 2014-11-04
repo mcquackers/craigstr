@@ -1,10 +1,11 @@
+<h2>Creating a new post in <%= @region.name %></h2>
 <%= render "error_messages", target:@post %>
-<%= form_for [@post.category, @post] do |form| %>
+<%= form_for [@region, @post] do |form| %>
   <%= form.label :title %>
   <%= form.text_field :title %>
   <br>
   <%= form.label :body %>
-  <%= form.text_body :body %>
+  <%= form.text_area :body %>
   <br>
   <%= form.submit %>
 <% end %>
