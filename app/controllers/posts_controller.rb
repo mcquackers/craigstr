@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  skip_before_action :require_admin
   def new
     @region = Region.find(params[:region_id])
     @post = @region.posts.new
@@ -27,6 +28,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body).merge(user_id:current_user.id)
+    params.require(:post).permit(:title, :body, :spam).merge(user_id: current_user.id)
   end
 end
