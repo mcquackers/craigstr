@@ -67,3 +67,9 @@
   1.  Click on a Category
   1.  Click on any user's email address
   1.  You are now viewing a page that lists all posts authored by that user
+
+### Scenario 9: Paginate user's posts
+  1.  Login as a user or admin
+  1.  Click on a Region
+  1.  Click on a Category
+  1.  Browse pages of posts in that category using the arrows
