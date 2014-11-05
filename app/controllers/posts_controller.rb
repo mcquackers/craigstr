@@ -32,6 +32,13 @@ class PostsController < ApplicationController
   end
 
   def show
+    @region = Region.find(params[:region_id])
+    @post = Post.find(params[:id])
+  end
+
+  def edit
+    @region = Region.find(params[:region_id])
+    @categories = @region.categories.all
     @post = Post.find(params[:id])
   end
 
