@@ -5,6 +5,7 @@
 <h3><%= @post.user.email %> writes: </h3>
 <h4><strong><%= @post.title %></strong></h4>
 <h5><%= @post.body %></h5>
+<%= image_tag @post.image_url %>
 <h5>
   <% if @post.user.id == current_user.id %>
     <%= link_to "Edit Post", edit_region_post_path(@region, @post) %>

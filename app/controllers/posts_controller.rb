@@ -19,10 +19,10 @@ class PostsController < ApplicationController
 
   def destroy
     post = Post.find(params[:id])
-    if authorized_to_alter(post)
+    if authorized_to_alter?(post)
       Post.destroy(params[:id])
     end
-    redirect_to root_path
+    redirect_to post.region
   end
 
   def update
@@ -52,7 +52,7 @@ class PostsController < ApplicationController
   def post_params
     params.
       require(:post).
-      permit(:title, :body, :spam, category_ids: []).
+      permit(:title, :body, :spam, :image_url, category_ids: []).
       merge(user_id: current_user.id)
   end
 
