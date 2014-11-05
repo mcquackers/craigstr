@@ -42,6 +42,9 @@ class PostsController < ApplicationController
     @region = Region.find(params[:region_id])
     @categories = @region.categories.all
     @post = Post.find(params[:id])
+    unless authorized_to_alter?(@post)
+      redirect_to region_path(@region)
+    end
   end
 
   private
