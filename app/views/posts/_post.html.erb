@@ -1,1 +1,4 @@
-<li><%= link_to post.title, [post.region, post] %> - <%= post.user.email %></li>
+<li>
+  <%= link_to post.title, [post.region, post] %> - 
+  <%= render "users/link", user: post.user %>
+</li>
