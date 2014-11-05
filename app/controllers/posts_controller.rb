@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   skip_before_action :require_admin
+  before_action :require_admin, only: [:delete]
   def new
     @region = Region.find(params[:region_id])
     @categories = @region.categories.all
