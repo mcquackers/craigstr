@@ -27,7 +27,9 @@ class PostsController < ApplicationController
 
   def update
     post = Post.find(params[:id])
-    post.update(post_params)
+    if authorized_to_alter?(post)
+      post.update(post_params)
+    end
     redirect_to [post.region, post]
   end
 
@@ -51,7 +53,7 @@ class PostsController < ApplicationController
       merge(user_id: current_user.id)
   end
 
-  def authorized_to_alter(post)
+  def authorized_to_alter?(post)
     current_user.admin?  || current_user.id == post.user.id
   end
 end
