@@ -1,3 +1,6 @@
+<% if @post.user.id == current_user.id || current_user.admin? %>
+  <%= button_to "Delete this post", {id: @post.id}, {method: :delete} %>
+<% end %>
 <%= button_to "Mark as Spam", {id: @post.id, post: {spam: true}}, {method: :patch} %>
 <h3><%= @post.user.email %> writes: </h3>
 

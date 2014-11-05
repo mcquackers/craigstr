@@ -4,6 +4,7 @@ class PostsController < ApplicationController
     @region = Region.find(params[:region_id])
     @categories = @region.categories.all
     @post = @region.posts.new
+    @categories = @region.categories.all
   end
 
   def create
@@ -14,6 +15,11 @@ class PostsController < ApplicationController
     else
       redirect_to region
     end
+  end
+
+  def destroy
+    Post.destroy(params[:id])
+    redirect_to root_path
   end
 
   def update

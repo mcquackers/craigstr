@@ -1,0 +1,3 @@
+<% if current_user.admin? %>
+  <%= link_to "View posts marked as spam", spams_path %>
+<% end %>
