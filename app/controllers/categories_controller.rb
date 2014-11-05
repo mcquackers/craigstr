@@ -11,8 +11,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    region = Category.find(params[:id]).region
-    @posts = region.posts.all
+    category = Category.find(params[:id])
+    @posts = category.posts
   end
 
   private
