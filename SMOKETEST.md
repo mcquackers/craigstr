@@ -46,3 +46,24 @@
   1.  Click on the "Mark as spam" button
   1.  You are now viewing the same page, but the page has been marked as spam
       for administrators.
+
+### Scenario 6: Add an image to a post
+  1.  Login as a user or admin
+  1.  Click on a region
+  1.  Click on a category
+  1.  Click on the "Create Post" link
+  1.  Fill in the title, body, and image_url fields
+  1.  Click on the "Create Post" button
+  1.  You are now viewing a page with your post details, and the linked image
+
+### Scenario 7: Viewing your own post history
+  1.  Login as a user or admin
+  1.  In the upper right corner, click on your email address.
+  1.  You are now viewing a page that lists all of your posts.
+
+### Scenario 8:  Viewing another user's post history
+  1.  Login as a user or admin
+  1.  Click on a Region
+  1.  Click on a Category
+  1.  Click on any user's email address
+  1.  You are now viewing a page that lists all posts authored by that user
