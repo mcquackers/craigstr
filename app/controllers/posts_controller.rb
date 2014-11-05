@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   skip_before_action :require_admin
-  before_action :require_admin, only: [:delete]
+  # before_action :require_admin, only: [:delete]
   def new
     @region = Region.find(params[:region_id])
     @categories = @region.categories.all
@@ -19,7 +19,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    Post.destroy(params[:id])
+    post = Post.find(params[:id])
+    if authorized_to_alter(post)
+      Post.destroy(params[:id])
+    end
     redirect_to root_path
   end
 
@@ -40,5 +43,9 @@ class PostsController < ApplicationController
       require(:post).
       permit(:title, :body, :spam, category_ids: []).
       merge(user_id: current_user.id)
+  end
+
+  def authorized_to_alter(post)
+    current_user.admin?  || current_user.id == post.user.id
   end
 end
