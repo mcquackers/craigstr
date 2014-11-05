@@ -43,7 +43,7 @@ class PostsController < ApplicationController
     @categories = @region.categories.all
     @post = Post.find(params[:id])
     unless authorized_to_alter?(@post)
-      redirect_to region_path(@region)
+      redirect_to @region
     end
   end
 
