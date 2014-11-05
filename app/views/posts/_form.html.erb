@@ -7,5 +7,7 @@
   <%= form.label :body %>
   <%= form.text_area :body %>
   <br>
+  <%= form.collection_check_boxes(:category_ids, @categories, :id, :name) %>
+
   <%= form.submit %>
 <% end %>
