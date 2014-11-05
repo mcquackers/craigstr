@@ -27,12 +27,24 @@ class PostsController < ApplicationController
 
   def update
     post = Post.find(params[:id])
-    post.update(post_params)
+    if authorized_to_alter?(post)
+      post.update(post_params)
+    end
     redirect_to [post.region, post]
   end
 
   def show
+    @region = Region.find(params[:region_id])
     @post = Post.find(params[:id])
+  end
+
+  def edit
+    @region = Region.find(params[:region_id])
+    @categories = @region.categories.all
+    @post = Post.find(params[:id])
+    unless authorized_to_alter?(@post)
+      redirect_to @region
+    end
   end
 
   private
@@ -44,7 +56,7 @@ class PostsController < ApplicationController
       merge(user_id: current_user.id)
   end
 
-  def authorized_to_alter(post)
+  def authorized_to_alter?(post)
     current_user.admin?  || current_user.id == post.user.id
   end
 end
