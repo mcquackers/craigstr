@@ -13,6 +13,7 @@ class CategoriesController < ApplicationController
   def show
     category = Category.find(params[:id])
     @posts = category.posts
+    @paginated_posts = @posts.order("title").page(params[:page]).per(3)
   end
 
   private
