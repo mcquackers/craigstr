@@ -19,7 +19,6 @@
 ### Scenario 3:  Creating a post
   1.  Sign in as an admin or a user
   1.  Click on a region
-  1.  Click on a category
   1.  Click on the "Create Post" link
   1.  Click on the "Title" text field
   1.  Enter the proposed post title
