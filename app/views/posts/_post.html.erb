@@ -1,4 +1,18 @@
 <li>
-  <%= link_to post.title, [post.region, post] %> - 
-  <%= render "users/link", user: post.user %>
+<div class = "post-header">
+  <div class = "thumbnail-div">
+    <%= image_tag default_image(post.image_url), class: "thumbnail" %>
+  </div>
+
+  <div class = "post-header-info">
+    <div class = "post-header-title">
+      <%= link_to post.title, [post.region, post] %> - 
+    </div>
+
+    <div class = "post-header-poster">
+      <%= render "users/link", user: post.user %>
+    </div>
+
+  </div>
+</div>
 </li>

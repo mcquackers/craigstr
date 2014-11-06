@@ -17,3 +17,17 @@
 #session-info {
   float:right;
 }
+
+.thumbnail {
+  max-height: 50px;
+  max-width: 50px;
+  float: left;
+}
+
+.post-header-info {
+  float: left;
+}
+
+li {
+  list-style-type: none;
+}
