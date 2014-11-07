@@ -12,10 +12,12 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem "monban-generators"
-gem "pry"
 gem "kaminari"
-gem 'database_cleaner'
+
 group :development, :test do
-  gem'rspec-rails'
+  gem 'rspec-rails'
   gem 'capybara'
+  gem 'database_cleaner'
+  gem "pry"
+  gem 'selenium-webdriver'
 end
