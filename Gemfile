@@ -14,3 +14,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem "monban-generators"
 gem "pry"
 gem "kaminari"
+gem 'database_cleaner'
+group :development, :test do
+  gem'rspec-rails'
+  gem 'capybara'
+end
